@@ -1,0 +1,326 @@
+* { box-sizing: border-box; 
+    margin: 0%; 
+    padding:0%; 
+    color: #111111; 
+}
+
+
+:root{
+    --fondo : rgb(228, 228, 228);
+}
+
+body { 
+    background: var(--fondo);
+    font-family: Arial, sans-serif;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "form"
+        "specs"
+        "video"
+        "main"
+        "footer";
+    width: 100%;
+}
+
+
+.header { 
+    display: grid;
+    grid-area: header;
+    justify-items: center;
+    margin: 10% auto 5% auto;
+    width: 100%;
+}
+
+@media (min-width:600px) {
+    .header { 
+        align-items: center;
+        background: var(--fondo);
+        display: flex;
+        grid-area: header;
+        height: 4rem;
+        justify-content: space-between;
+        margin: 0% auto 5% auto;
+        padding: 0rem 1rem;
+        position: sticky;
+        top: 0%;
+        width: 100%;
+        }
+}
+
+.header_logo {
+    height: auto;
+    max-height: 3rem;
+    max-width: 20rem;
+    width: 90%;
+}
+
+
+
+
+.header_nav {
+    display: flex;
+    flex-direction: column;
+    line-height: 23px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media (min-width:600px) {
+    .header_nav { 
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        }
+}
+
+.header_navItem {
+    margin: 0% 2rem;
+    text-decoration: none;
+}
+
+/*******************************************************************************************/
+.form {
+    display: grid;
+    grid-area: form;
+    grid-gap: 10px;
+    grid-template-rows: repeat(3, auto);
+    justify-items: center;
+    margin-bottom: 50px;
+    padding: 0px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.form_Title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.input_email {
+    border: 2px solid rgb(212, 212, 212);
+    font-size: 1rem;
+    height: 2rem;
+    max-width: 400px;
+    padding-left: 5px;
+    width: 90%;
+}
+
+.input_btn {
+    background-color:darkorange;
+    border: none;
+    color: #161616;
+    font-size: 1.5rem;
+    font-weight: 800;
+    height: 2.5rem;
+    max-width: 350px;
+    width: 50%
+}
+
+/*******************************************************************************************/
+.specs {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);
+    grid-area: specs;
+    padding: 0px 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width:600px) {
+    .specs {
+        display: grid;
+        grid-area: specs;
+        grid-gap: 4rem;
+        grid-template-areas: 
+            "icon1 article1"
+            "icon2 article2"
+            "icon3 article3";
+        grid-template-columns: 20% 1fr;
+        grid-template-rows: repeat(3,auto);
+        padding: 0rem 10rem;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+    .icon1{grid-area:icon1;}
+    .icon2{grid-area:icon2;}
+    .icon3{grid-area:icon3;}
+    .article1{grid-area:article1;}
+    .article2{grid-area:article2;}
+    .article3{grid-area:article3;}
+    
+    
+}
+
+
+
+.specs_icon {
+    display: none;
+}
+@media (min-width:600px) {
+    .specs_icon { 
+        align-self: center;
+        color: darkorange;
+        display: grid;
+        font-size: 2.5rem;
+        justify-self: end;
+
+    }
+}
+
+
+
+.specs_article {
+    align-self: center;
+    display: grid;
+    grid: article;
+    justify-self: start;
+    text-align: justify;
+}
+
+
+.specs_title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 15px 0px 5px 0px;
+}
+.specs_p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/*******************************************************************************************/
+
+.video {
+    display: grid;
+    grid-area: video;
+    margin-bottom: 4rem;
+}
+
+
+
+.video_video{
+    margin: auto;
+    max-width: 600px;
+    min-height: 250px;
+    width: 100%;
+}
+
+/*******************************************************************************************/
+.main {
+    grid-area: main;
+    width: 100%;
+}
+
+@media (min-width:650px) {
+    .main {
+        display: flex;
+        flex-direction: row;
+        grid-area: main;
+        margin: auto;
+        max-width: 800px;
+        width: 100%;
+    }
+}
+
+
+.main_card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.301);
+    display: grid;
+    grid-template-rows: 15% 1fr;
+    height: 300px;
+    margin: 1rem auto 3rem auto;
+    width: 210px;
+}
+
+
+.card_divtitle {
+    align-items:  end;
+    background-color: rgb(216, 216, 216);
+    border-radius:   30px 30px  0px 0px;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    padding-bottom: 2.5%;
+    width: 100%;
+}
+
+
+.card_title {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+
+.card_body {
+    display: grid;
+    height: 100%;
+    padding: 1rem;
+    justify-items: center;
+    line-height: 23px;
+    text-align: center;
+    width: 100%;
+}
+
+.card_price {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-top: 1rem;
+}
+
+.card_p {  
+    font-size: 1rem;   
+    font-weight: 600;
+}
+
+.card_btn {
+    background-color:darkorange;
+    border: none;
+    font-size: 1rem;  
+    font-weight: 700;
+    height: 2rem;
+    margin-top: 1rem;
+    width: 9rem;
+}
+
+/*******************************************************************************************/
+
+
+.footer {
+    background-color: rgb(190, 190, 190);
+    border-radius: 10px 10px 0px 0px;
+    display: grid;
+    grid-area: footer;
+    grid-gap: .5rem;
+    grid-template-rows: 1fr 1fr;
+    height: 90px;
+    justify-items: end;
+    margin: 2rem auto 0rem auto;
+    max-width: 900px;
+    padding-right: 1rem;
+    width: 100%;
+}
+
+.footer1 {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer1 a {
+    margin-left: .5rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.footer2 {
+    align-self: flex-start;
+    display: flex;
+    font-size: 1rem;
+}
